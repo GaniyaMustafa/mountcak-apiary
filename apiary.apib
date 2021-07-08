@@ -1,0 +1,121 @@
+FORMAT: 1A
+HOST: https://polls.apiblueprint.org/
+
+# Mountcak
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Login [/user/login]
+
+### Login Request [POST]
+
++ Request (application/json)
+
+        {
+            "username": "Agus Suratna",
+            "password": "Agusgusgus",
+        }
+
++ Response 200 (application/json)
+
+        {
+            "status": "OK",
+            "user_id": "user-1",
+            "token": "432418f4b549952478541cc475642452c8e0a4e2"
+        }
+
+
+## User Profile [/user/user-abcdefghij]
+
+### Get User Profile [GET]
+
++ Response 200 (application/json)
+
+        {
+            "status": "OK",
+            "message": "Data berhasil didapat",
+            "result": {
+                "id": "user-abcdefghjkl",
+                "username": "Agus Suratna",
+                "email": "suratna@gmail.com',
+                "image": "https://images.forwardcdn.com/image/1300x/right/top/images/cropped/david-mamet-harvey-weinstein-1519412491.jpg",
+                "telp": "+62888002324920"
+            }
+        }
+
+## Edit User Profile [/user/user-2]
+
+### Edit User Profile [PUT]
+
++ Request (application/json)
+
+        {
+            "username": "Agus Suratna",
+            "password": "Agusgusgus",
+            "image": "https://images.forwardcdn.com/image/1300x/right/top/images/cropped/david-mamet-harvey-weinstein-1519412491.jpg",
+            "telp": "+62888002324920"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "status": "OK",
+            "message": "Data berhasil diperbarui",
+            "user_id": "user-abcdefghijkl"
+        }
+        
+## Mountain [/mountain]
+
+### Get Mountains [GET]
+
++ Response 200 (application/json)
+
+        {
+            "status": "OK",
+            "message": "Data berhasil didapat",
+            "result": [
+                {
+                    "id": "mountain-abcdefghjkl",
+                    "name": "Gunung Semeru",
+                    "image": "imageurl",
+                    "maks_climber": 5,
+                    "duration": {
+                        "day": 3,
+                        "night": 3
+                    },
+                    "status": {
+                        "is_open": true,
+                        "is_team_avaliable": true
+                    }
+                }
+            ]
+        }
+        
+## Team [/mountain/mountain-1/team]
+
+### Get Teams [GET]
+
++ Response 200 (application/json)
+
+        {
+            "status": "OK",
+            "message": "Data berhasil didapat",
+            "result": [
+                {
+                    "id": "team-abcdefghjkl",
+                    "leader": {
+                        "name": "Agus Sumanto",
+                        "image": "https://dutatv.com/wp-content/uploads/2020/10/Yayat-Pelatih-Judo-Tunanetra-640x376.jpg"
+                    },
+                    "member": {
+                        "count": 2,
+                        "maks": 5
+                    },
+                    "schedule": {
+                        "go": "2021-06-30 07:00:00",
+                        "home": "2021-10-30 15:49:00"
+                    },
+                    "price": 21000
+                }
+            ]
+        }
