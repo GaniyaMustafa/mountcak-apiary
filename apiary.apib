@@ -13,7 +13,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
         {
             "username": "Agus Suratna",
-            "password": "Agusgusgus",
+            "password": "Agusgusgus"
         }
 
 + Response 200 (application/json)
@@ -22,6 +22,26 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             "status": "OK",
             "user_id": "user-1",
             "token": "432418f4b549952478541cc475642452c8e0a4e2"
+        }
+
+## Signup [/user/login]
+
+### Signup Request [POST]
+
++ Request (application/json)
+
+        {
+            "fullname": "Agu Suratna",
+            "username": "Agus Suratna",
+            "password": "Agusgusgus"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "status": "OK",
+            "message": "Account created"
+            "user_id": "user-1",
         }
 
 
